@@ -1088,7 +1088,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.apk
-          path: ${{steps.sign-rustdesk.outputs.signedReleaseFile}}
+          path: ./signed-apk
 
       - name: Publish signed apk package
         if: env.UPLOAD_ARTIFACT == 'true'
@@ -1264,7 +1264,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.apk
-          path: ${{steps.sign-rustdesk.outputs.signedReleaseFile}}
+          path: ./signed-apk
 
       - name: Publish signed apk package
         if: env.UPLOAD_ARTIFACT == 'true'
